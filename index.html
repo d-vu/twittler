@@ -1,42 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="jquery.js"></script>
-    <script src="data_generator.js"></script>
+    <script src="javascript/jquery.js"></script>
+    <script src="javascript/data_generator.js"></script>
+    <script src="javascript/twittler.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/twittler.css">
   </head>
   <body>
-    <script>
 
-      $(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
+    <div class = "tweets" >
+      <p>Area for tweets</p>
+      <button id = 'newTweets'>New Tweets</button>
+    </div>
 
-        function formatTimestamp(tweetCreationTime){
-          var year = tweetCreationTime.getFullYear();
-          var month = formatMonth(tweetCreationTime.getMonth());
-          var day = tweetCreationTime.getDay();
-          //var hour = tweetCreationTime.getHour();
-          var formatedDate = month + " " + day + " " + year;
-          return formatedDate;
-        }
-
-        function formatMonth(monthIndex){
-          var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-          return months[monthIndex];
-        }
-
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          var timeStamp = formatTimestamp(tweet.created_at);
-          $tweet.text('@' + tweet.user + ': ' + tweet.message + ' created at ' + timeStamp );
-          $tweet.appendTo($body);
-          index -= 1;
-        }
-
-      });
-
-    </script>
+    <div class = "followers">
+      <p>Area for followers <p>
+    </div>
+    
   </body>
 </html>
