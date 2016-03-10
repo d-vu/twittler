@@ -6,7 +6,7 @@ $(document).ready(function(){
       });
 
       $('#newTweets').on('click', function(){
-        $('.tweets').toggle();
+        showTweets();
       });
       
       function formatTimestamp(tweetCreationTime){
@@ -41,6 +41,7 @@ $(document).ready(function(){
 
       function showTweets(userName) {
           if (arguments.length < 1) {
+            $('.tweets').empty();
             var homeTweetsLength = streams.home.length-1;
             for (var i = homeTweetsLength; i > 0; i--) {
                 var tweet = streams.home[i];
@@ -78,7 +79,7 @@ $(document).ready(function(){
           }
       }
       showTweets();
-      showTweets("shawndrost");
+      
 
       // }
 
