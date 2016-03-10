@@ -1,7 +1,26 @@
 .tweets {
-	background-color: 	blue;
+
 }
 
 .followers{
-	background-color: 	red;
+	
 }
+
+a {
+	color: red;
+}
+
+a:hover {
+	text-decoration: underline;
+	font-weight: bold;
+	cursor:pointer;
+}
+
+p {
+	display: inline-block;
+}
+
+span {
+	display: block;
+}
+

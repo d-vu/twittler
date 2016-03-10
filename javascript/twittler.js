@@ -1,15 +1,18 @@
 $(document).ready(function(){
-      var $body = $('body');
-      //$body.html('');
+
+      $("body").on('click', "a", function(){
+        var taco = $(this).text().substring(1);
+        console.log(taco);
+        alert(taco + '?!?!?');
+      });
 
       $('#newTweets').on('click', function(){
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          var timeStamp = formatTimestamp(tweet.created_at);
-          $tweet.text('@' + tweet.user + ': ' + tweet.message + ' - ' + tweet.created_at );
-          $tweet.appendTo($body);
+          var user = $('<div></div>');
+          user.text('@' + tweet.user);
+          user.appendTo($('listOfTweets'));
           index -= 1;
         };
       });
@@ -28,13 +31,35 @@ $(document).ready(function(){
         return months[monthIndex];
       }
 
+
+
       var index = streams.home.length - 1;
       while(index >= 0){
+        // var tweet = streams.home[index];
+        // var $tweet = $('<div></div>');
+        // $tweet.text('@' + tweet.user + ': ' + tweet.message + ' - ' + formatTimestamp(tweet.created_at) );
+        // $tweet.appendTo($body);
+        // index -= 1;
+
+        // var tweet = streams.home[index];
+        // var user = $('<div></div>');
+        // user.text('@' + tweet.user);
+        // user.appendTo($('listOfTweets'));
+        // index -= 1;
+
         var tweet = streams.home[index];
-        var $tweet = $('<div></div>');
-        var timeStamp = formatTimestamp(tweet.created_at);
-        $tweet.text('@' + tweet.user + ': ' + tweet.message + ' - ' + tweet.created_at );
-        $tweet.appendTo($body);
+        var tweetTag = $('<a></a>');
+        var tweetDate = $('<p><p');
+        var tweetMessage = $('<span></span>');
+
+        tweetTag.text('@' + tweet.user);
+        tweetDate.text(formatTimestamp(tweet.created_at));
+        tweetMessage.text(tweet.message);
+
+        tweetTag.appendTo($('.tweets'));
+        tweetDate.appendTo($('.tweets'));
+        tweetMessage.appendTo($('.tweets'));
+
         index -= 1;
       }
 
