@@ -1,14 +1,8 @@
-.tweets {
-
-}
-
-.followers{
-	
-}
-
 a {
 	color: red;
 }
+
+
 
 a:hover {
 	text-decoration: underline;
@@ -22,5 +16,29 @@ p {
 
 span {
 	display: block;
+}
+
+
+
+.tweets {
+	width: 30%;
+
+	position: fixed;
+
+	
+}
+
+.followers{
+	width: 30%;
+
+	position: fixed;
+	top:0;
+	right: 0;
+	
+}
+
+.followers a{
+	display: block;
+	
 }
 

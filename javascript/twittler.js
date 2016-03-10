@@ -1,20 +1,13 @@
 $(document).ready(function(){
 
       $("body").on('click', "a", function(){
-        var taco = $(this).text().substring(1);
+        var userName = $(this).text().substring(1);
         console.log(taco);
         alert(taco + '?!?!?');
       });
 
       $('#newTweets').on('click', function(){
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var user = $('<div></div>');
-          user.text('@' + tweet.user);
-          user.appendTo($('listOfTweets'));
-          index -= 1;
-        };
+        $('.tweets').empty();
       });
       
       function formatTimestamp(tweetCreationTime){
@@ -29,6 +22,13 @@ $(document).ready(function(){
       function formatMonth(monthIndex){
         var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         return months[monthIndex];
+      }
+
+      function showUserTimeline(userName){
+        var usersNameTweets = streams.users[userName];
+        for (var i = 0; i < usersNameTweets.length i++){
+          
+        }
       }
 
 
@@ -62,5 +62,11 @@ $(document).ready(function(){
 
         index -= 1;
       }
+
+      for(var i = 0; i < window.users.length; i++){
+        $('<a></a>').text('@' + users[i]).appendTo($('.followers'));
+      }
+
+
 
     });
