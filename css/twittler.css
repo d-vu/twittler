@@ -1,8 +1,13 @@
-a {
-	color: red;
+body{
+	font-family: 'Droid Sans', sans-serif;
+	background-color: #F5F8FA;;
 }
 
+a {
+	color: #55acee;
+	font-size: 18px;
 
+}
 
 a:hover {
 	text-decoration: underline;
@@ -10,30 +15,58 @@ a:hover {
 	cursor:pointer;
 }
 
-p {
-	display: inline-block;
-}
-
 span {
+	font-size: 18px;
+	font-style: italic;
+	margin-top: 5px;
+	margin-left: 20px;
+	margin-bottom: 15px;
 	display: block;
 }
 
+p {
+	font-size: 12px;
+	display: inline-block;
+	font-style: italic;
+}
 
+h1{
+	margin-left: 50px;
+}
 
-.tweets {
-	width: 30%;
+#newTweets{
+	color: #ececec;
+	background-color: #55acee;
+	padding: 5px;
+	margin-bottom: 20px;
+	margin-left: 50px;
+	border-radius: 20px;
+}
 
-	
+#newTweets:hover{
+	background-color: #2795e9;
 
-	
+}
+
+.tweetsWrapper{
+	margin-left: 20px;
+	width: 60%;
+	border-style: solid;
+	border-width: 1px;
+	background-color: #FFF;
+}
+
+.tweets{
+	margin-left: 50px;
 }
 
 .followers{
+	background-color: #F5F8FA;
 	width: 30%;
-
 	position: fixed;
 	top:0;
 	right: 0;
+	display: block;
 	
 }
 
